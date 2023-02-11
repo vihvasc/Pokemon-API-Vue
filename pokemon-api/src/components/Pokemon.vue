@@ -1,7 +1,7 @@
 <template>
   <div id="card" class="card">
     <div class="card">
-        <img :src="pokemon.image" alt="Pokémon Image">
+        <img :src="pokemon.image" alt="Pokémon Image" class="cardImage">
       <div class="media-content">
         name: {{ pokemon.name }} <br>
         type: {{ pokemon.type }} <br>
@@ -63,10 +63,18 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 .media-content {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;  text-align: center;
   text-align: center;
   color: #663366;
   margin-top: 60px;
+  font-weight: bold;
+}
+.cardImage {
+  width: 250px;
+  height: 250px;
+  align-items: center;
 }
 </style>
