@@ -20,7 +20,7 @@ Agora sim estamos prontos para instalar o projeto.
 1. Primeiro, abra um novo terminal e clone o repositório utilizando o comando 
 `git@github.com:vihvasc/Pokemon-API-Vue.git`
 
-2. Em seguida, digite `cd Pokemon-API-Vue` para entrar no diretório (pasta) do projeto, que acabou de ser criada.
+2. Em seguida, digite `cd pokemon-api` para entrar no diretório (pasta) do projeto, que acabou de ser criada.
 
 3. Utilize o comando `npm install` para instalar as dependências da aplicação, caso existam.
 
