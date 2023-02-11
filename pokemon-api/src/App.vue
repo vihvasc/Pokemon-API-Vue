@@ -1,17 +1,19 @@
 <template>
+<div class="background">
   <div class="app">
     <div>
-      <img alt="Pokemon Logo" class="pokemon-logo" src="./assets/pokemon-logo.png">
+      <img alt="Pokemon Logo" class="pokemon-logo" :src="require('./assets/pokemon-logo.png')">
     </div>
-      <input type="text" name="" id="" placeholder="Search Pokémon" v-model="search">
+      <input type="text" name="" class="place-holder" placeholder="Search Pokémon" v-model="search">
       <button class="search" @click="searchPokemons">search</button>
     <div>
       <div id="pokemon-list">
-          <div :key="pokemon.url" v-for="(pokemon, index) in filteredPokemons">
-            <Pokemon :index="index + 1" :name="pokemon.name" :url="pokemon.url" />
-          </div>
+        <div :key="pokemon.url" v-for="(pokemon, index) in filteredPokemons">
+          <Pokemon :index="index + 1" :name="pokemon.name" :url="pokemon.url" />
+        </div>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
@@ -53,28 +55,46 @@ export default {
 </script>
 
 <style>
+body {
+  background: #FFFFFF url("./assets/background.jpg") no-repeat right top fixed;
+}
 .pokemon-logo {
   width: 300px;
-  height: 115px;
+  height: 165px;
   object-fit: fill;
   align-items: center;
 }
 .app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Helvetica, Arial, sans-serif;
   text-align: center;
-  color: #2c3e50;
+  color: #663366;
   margin-top: 60px;
 }
 .search {
+  border: 1px solid;
+  border-radius: 20px;
+  border-style: groove;
+  box-shadow: 5px 5px 5px #eee;
+  border-color: #330033;
+  background: #FFCCFF;
+  color: #330033;
   margin-top: 1vh;
+  text-align: center;
 }
-#pokemon-list {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+.search:hover {
+  border: 1px solid;
+  border-radius: 20px;
+  border-style: groove;
+  box-shadow: 5px 5px 5px #eee;  
+  background: #663366;
+  color: #FFCCFF;
+   margin-top: 1vh;
+  text-align: center;
+  cursor: pointer;
+}
+.place-holder {
+  border: 1px solid;
+  margin-right: 1vh;
+  text-align: center;
 }
 </style>
