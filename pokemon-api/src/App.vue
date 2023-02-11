@@ -47,6 +47,7 @@ export default {
     api.get(`pokemon/${ this.search }`).then((response) => { 
       this.pokemons = response;
       this.filteredPokemons = response;
+      this.responseStatus = '';
     }).catch((error) => {
       this.responseStatus = error.response.status;
     }
