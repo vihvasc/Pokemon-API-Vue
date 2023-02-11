@@ -4,8 +4,10 @@
     <div>
       <img alt="Pokemon Logo" class="pokemon-logo" :src="require('./assets/pokemon-logo.png')">
     </div>
+    <form @submit="searchPokemons">
       <input type="text" name="" class="place-holder" placeholder="Search Pokémon" v-model="search">
       <button class="search" @click="searchPokemons">search</button>
+    </form>
     <div>
       <div id="pokemon-list">
         <div v-if="filteredPokemons.data">
@@ -34,14 +36,15 @@ export default {
     }
   },
   methods: {
-    searchPokemons: function() {
+    searchPokemons: function(event) {
+
+    event.preventDefault()
+
 
     api.get(`pokemon/${ this.search }`).then((response) => { 
       this.pokemons = response;
       this.filteredPokemons = response;
     });
-
-    console.log(this.filteredPokemons)
 
       this.filteredPokemons = this.pokemons;
       if(this.search == '' || this.search == ' ') {
