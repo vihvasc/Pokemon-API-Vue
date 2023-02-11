@@ -5,7 +5,7 @@
   </div>
 
   <div class="search">
-    <input type="text" v-model="search" placeholder="Search" />
+    <input type="text" v-model="search" placeholder="Search Pokémon" />
   </div>
   </v-app>
 </template>
