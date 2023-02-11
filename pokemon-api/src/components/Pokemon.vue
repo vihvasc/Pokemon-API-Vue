@@ -1,21 +1,21 @@
 <template>
   <div id="card" class="card">
     <div class="card">
-        <img :src="image" alt="Pokémon Image">
+        <img :src="pokemon.image" alt="Pokémon Image">
       <div class="media-content">
-        {{ pokemon.name }} <br>
-        {{ pokemon.type }} <br>
-        {{ pokemon.statHpName }}
+        name: {{ pokemon.name }} <br>
+        type: {{ pokemon.type }} <br>
+        {{ pokemon.statHpName }}:
         {{ pokemon.statHp }} <br>
-        {{ pokemon.statAttackName }}
+        {{ pokemon.statAttackName }}:
         {{ pokemon.statAttack }} <br>
-        {{ pokemon.statDefenseName }}
+        {{ pokemon.statDefenseName }}:
         {{ pokemon.statDefense }} <br>
-        {{ pokemon.statSpecialAttackName }}
+        {{ pokemon.statSpecialAttackName }}:
         {{ pokemon.statSpecialAttack }} <br>
-        {{ pokemon.statSpecialDefenseName }}
+        {{ pokemon.statSpecialDefenseName }}:
         {{ pokemon.statSpecialDefense }} <br>
-        {{ pokemon.statSpeedName }}
+        {{ pokemon.statSpeedName }}:
         {{ pokemon.statSpeed }} <br>
       </div>
     </div>

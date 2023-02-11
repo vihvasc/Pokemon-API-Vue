@@ -55,6 +55,8 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 body {
   background: #FFFFFF url("./assets/background.jpg") no-repeat right top fixed;
 }
@@ -65,36 +67,43 @@ body {
   align-items: center;
 }
 .app {
-  font-family: Helvetica, Arial, sans-serif;
-  text-align: center;
+  font-family: 'Montserrat', sans-serif;  text-align: center;
   color: #663366;
   margin-top: 60px;
 }
 .search {
+  font-family: 'Montserrat', sans-serif;
   border: 1px solid;
   border-radius: 20px;
   border-style: groove;
   box-shadow: 5px 5px 5px #eee;
   border-color: #330033;
-  background: #FFCCFF;
+  background: #C0D9D9;
   color: #330033;
   margin-top: 1vh;
   text-align: center;
+  width: 100px;
 }
 .search:hover {
   border: 1px solid;
   border-radius: 20px;
   border-style: groove;
+  border-color: #330033;
   box-shadow: 5px 5px 5px #eee;  
-  background: #663366;
-  color: #FFCCFF;
-   margin-top: 1vh;
+  background: #38B0DE;
+  color: #000;
+  margin-top: 1vh;
   text-align: center;
   cursor: pointer;
+  width: 100px;
 }
 .place-holder {
+  width: 300px;
   border: 1px solid;
   margin-right: 1vh;
   text-align: center;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  height: 25px;
 }
 </style>
