@@ -3,7 +3,7 @@
     <div class="card">
         <img :src="image" alt="Pokémon Image">
       <div class="media-content">
-        {{ name }}
+        {{ pokemon.name }} <br>
         {{ pokemon.type }} <br>
         {{ pokemon.statHpName }}
         {{ pokemon.statHp }} <br>
@@ -33,6 +33,7 @@ export default {
   },
   created: function() {
     api.get(this.url).then((response) => {
+      this.pokemon.name = response.data.name;
       this.pokemon.type = response.data.types[0].type.name;
       this.pokemon.statHpName = response.data.stats[0].stat.name;
       this.pokemon.statHp = response.data.stats[0].base_stat;
@@ -53,7 +54,7 @@ export default {
     return {
       image: '',
       pokemon: {
-        type: ''
+        type: '',
       }
     }
   },
@@ -67,18 +68,10 @@ export default {
 </script>
 
 <style>
-  .card {
-    margin: 1vh;
-  }
-  #card {
-    width: 20rem;
-  }
 .media-content {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Helvetica, Arial, sans-serif;
   text-align: center;
-  color: #2c3e50;
+  color: #663366;
   margin-top: 60px;
 }
 </style>
