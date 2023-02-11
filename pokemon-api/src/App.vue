@@ -13,6 +13,9 @@
         <div v-if="filteredPokemons.data">
           <Pokemon :pokemonInfo="filteredPokemons.data"  />
         </div>
+        <div v-if="responseStatus === 404">
+          <h1> Pokémon not registered! </h1>
+        </div>
       </div>
     </div>
   </div>
@@ -32,7 +35,8 @@ export default {
     return {
       pokemons: [],
       filteredPokemons: {},
-      search: ''
+      search: '',
+      responseStatus: '',
     }
   },
   methods: {
@@ -40,11 +44,14 @@ export default {
 
     event.preventDefault()
 
-
     api.get(`pokemon/${ this.search }`).then((response) => { 
       this.pokemons = response;
       this.filteredPokemons = response;
-    });
+    }).catch((error) => {
+      this.responseStatus = error.response.status;
+    }
+    );
+
 
       this.filteredPokemons = this.pokemons;
       if(this.search == '' || this.search == ' ') {
