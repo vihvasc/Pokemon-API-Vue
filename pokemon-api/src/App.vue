@@ -8,8 +8,8 @@
       <button class="search" @click="searchPokemons">search</button>
     <div>
       <div id="pokemon-list">
-        <div :key="pokemon.url" v-for="(pokemon, index) in filteredPokemons">
-          <Pokemon :index="index + 1" :name="pokemon.name" :url="pokemon.url" />
+        <div v-if="filteredPokemons.data">
+          <Pokemon :pokemonInfo="filteredPokemons.data"  />
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@ export default {
   data() {
     return {
       pokemons: [],
-      filteredPokemons: [],
+      filteredPokemons: {},
       search: ''
     }
   },

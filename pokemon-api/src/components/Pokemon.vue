@@ -23,38 +23,33 @@
 </template>
 
 <script>
-import api from '../services/api';
 
 export default {
   name: 'Pokemon-name',
   props: {
     name: String,
-    url: String
+    pokemonInfo: Object,
   },
-  created: function() {
-    api.get(this.url).then((response) => {
-      this.pokemon.name = response.data.name;
-      this.pokemon.type = response.data.types[0].type.name;
-      this.pokemon.statHpName = response.data.stats[0].stat.name;
-      this.pokemon.statHp = response.data.stats[0].base_stat;
-      this.pokemon.statAttackName = response.data.stats[1].stat.name;
-      this.pokemon.statAttack = response.data.stats[1].base_stat;
-      this.pokemon.statDefenseName = response.data.stats[2].stat.name;
-      this.pokemon.statDefense = response.data.stats[2].base_stat;
-      this.pokemon.statSpecialAttackName = response.data.stats[3].stat.name;
-      this.pokemon.statSpecialAttack = response.data.stats[3].base_stat;
-      this.pokemon.statSpecialDefenseName = response.data.stats[4].stat.name;
-      this.pokemon.statSpecialDefense = response.data.stats[4].base_stat;
-      this.pokemon.statSpeedName = response.data.stats[5].stat.name;
-      this.pokemon.statSpeed = response.data.stats[5].base_stat;
-      this.image = response.data.sprites.front_default;
-    });
-  },
+
   data() {
     return {
       image: '',
       pokemon: {
-        type: '',
+        name: this.pokemonInfo.name,
+        type: this.pokemonInfo.types[0].type.name,
+        statHpName: this.pokemonInfo.stats[0].stat.name,
+        statHp: this.pokemonInfo.stats[0].base_stat,
+        statAttackName: this.pokemonInfo.stats[1].stat.name,
+        statAttack: this.pokemonInfo.stats[1].base_stat,
+        statDefenseName: this.pokemonInfo.stats[2].stat.name,
+        statDefense: this.pokemonInfo.stats[2].base_stat,
+        statSpecialAttackName: this.pokemonInfo.stats[3].stat.name,
+        statSpecialAttack: this.pokemonInfo.stats[3].base_stat,
+        statSpecialDefenseName: this.pokemonInfo.stats[4].stat.name,
+        statSpecialDefense: this.pokemonInfo.stats[4].base_stat,
+        statSpeedName: this.pokemonInfo.stats[5].stat.name,
+        statSpeed: this.pokemonInfo.stats[5].base_stat,
+        image: this.pokemonInfo.sprites.front_default,
       }
     }
   },
